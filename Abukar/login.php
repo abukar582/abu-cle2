@@ -2,7 +2,7 @@
 session_start();
 
 $login = false;
-// Is user logged in?
+
 if (isset($_SESSION['loggedInUser'])) {
     $login = true;
 }
@@ -12,11 +12,9 @@ if (isset($_POST['submit'])) {
     /** @var mysqli $db */
     require_once "database.php";
 
-    // Get form data
     $mail = mysqli_escape_string($db, $_POST['mail']);
-    $password = $_POST['password'];
+    $password = !empty($_POST['password']) ? $_POST['password'] : '';
 
-    // Server-side validation
     $errors = [];
     if ($mail == '') {
         $errors['mail'] = 'Please fill in your email.';
@@ -25,35 +23,26 @@ if (isset($_POST['submit'])) {
         $errors['password'] = 'Please fill in your password.';
     }
 
-    // If data valid
     if (empty($errors)) {
-        // SELECT the user from the database, based on the mail address.
-        $query = "SELECT * FROM registreer WHERE mail='$mail'";
+        $query = "SELECT id, name, email, phone, password FROM users WHERE email='$mail'";
         $result = mysqli_query($db, $query);
 
-        // check if the user exists
         if (mysqli_num_rows($result) == 1) {
-            // Get user data from result
             $user = mysqli_fetch_assoc($result);
 
-            // Check if the provided password matches the stored password in the database
             if (password_verify($password, $user['password'])) {
                 $login = true;
 
-                // Store the user in the session
                 $_SESSION['loggedInUser'] = [
                     'id'    => $user['id'],
-                    'first_name'  => $user['first_name'],
-                    'mail' => $user['mail'],
+                    'name'  => $user['name'],
+                    'email' => $user['email'],
                 ];
 
-                // Redirect to secure page
             } else {
-                //error incorrect log in
                 $errors['loginFailed'] = 'The provided credentials do not match.';
             }
         } else {
-            //error incorrect log in
             $errors['loginFailed'] = 'The provided credentials do not match.';
         }
     }
@@ -76,16 +65,17 @@ if (isset($_POST['submit'])) {
         <h2 class="title">Log in</h2>
 
         <?php if ($login) { ?>
-            <p>Je bent ingelogd!</p>
-            <p><a href="reserveringen.php">Reserveringen</a> / <a href="create.php">Naar reserveren</a> / <a href="index.html">terug home/ <a href="logout.php">uitlogen</a></a></p>
-        <?php } else { ?>
+            <p>Je bent ingelogd!</p> <?php
+            header("Location: index.html");
+            exit();
+            } else { ?>
 
             <section class="columns">
                 <form class="column is-6" action="" method="post">
 
                     <div class="field is-horizontal">
                         <div class="field-label is-normal">
-                            <label class="label" for="mail"></label>
+                            <label class="label" for="mail">E-mail</label>
                         </div>
                         <div class="field-body">
                             <div class="field">
@@ -128,7 +118,7 @@ if (isset($_POST['submit'])) {
                     <div class="field is-horizontal">
                         <div class="field-label is-normal"></div>
                         <div class="field-body">
-                            <button class="button is-link is-fullwidth" type="submit" name="submit">Log in With mail</button>
+                            <button class="button is-link is-fullwidth" type="submit" name="submit" value="submit">Log in</button>
                             <a class="button is-black" href="index.html">Homepagina</a>
 
 

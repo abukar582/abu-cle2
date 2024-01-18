@@ -3,18 +3,14 @@
 /** @var mysqli $db */
 require_once "database.php";
 
-
-//Retrieve the GET parameter from the 'Super global'
 $userId = $_GET['id'];
 
-//Get the record from the database result
 $query = "SELECT * FROM users WHERE id = '$userId'";
 $result = mysqli_query($db, $query);
 
 
 $user = mysqli_fetch_assoc($result);
 
-//Close connection
 mysqli_close($db);
 ?>
 <!doctype html>
@@ -33,39 +29,7 @@ mysqli_close($db);
 
 <div class="columns is-centered mt-6">
     <div class="box column is-half">
-        <p class="box has-text-weight-bold	">Uw reservering is succesvol doorgestuurd naar ons, we zien u graag
-            op:</p>
-        <div class="columns is-mobile">
-            <div class="column is-one-quarter">
-                <p class="box is-italic	"><?= $user['date'] ?></p>
-            </div>
-            <div class="column is-one-quarter ">
-                <p class="box is-italic	"><?= $user['time'] ?></p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="columns is-centered">
-    <div class="box column is-half">
-        <p class="box has-text-weight-bold	">Uw gegevens:</p>
-        <div class="columns is-mobile ">
-            <div class="column is-one-quarter">
-                <p class="box is-italic	"><?= $user['first_name'] ?></p>
-            </div>
-            <div class="column is-one-quarter">
-                <p class="box is-italic	"><?= $user['last_name'] ?></p>
-            </div>
-            <div class=" column is-half">
-                <p class="box is-italic"><?= $user['mail'] ?></p>
-            </div>
-        </div>
-        <div class="columns is-mobile ">
-            <div class=" column is-half">
-                <p class="box is-italic"><?= $user['number'] ?></p>
-            </div>
-        </div>
-    </div>
-</div>
+        <p class="box has-text-weight-bold	">Uw reservering is succesvol doorgestuurd.</p>
 <div class="columns is-centered">
     <div class="box column is-half">
 

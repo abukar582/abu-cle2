@@ -1,5 +1,10 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +12,7 @@
   <link rel="stylesheet" href="style.css" />
   <title>Advies van Ali</title>
 </head>
+
 <body>
 
 <header>
@@ -20,32 +26,49 @@
             <a href="index.html">Home</a>
           </button>
         </li>
+        <li class="nav-link">
+          <button class="button">
+            <a href="create.php">Afspreken</a>
+          </button>
+        </li>
+          <li class="nav-link">
+              <button class="button">
+                  <a href="contact.php">Contact</a>
+              </button>
+          </li>
 
+        <?php
+          if (isset($_SESSION['loggedInUser'])) {
+          ?>
+        <li class="nav-link">
           <button class="button">
-            <a href="create.php">reserveren</a>
+            <a href="admin.php">Admin</a>
           </button>
         </li>
         <li class="nav-link">
-          <button class="button">
-            <a href="contact.html">Contact</a>
-          </button>
+            <button class="button">
+                <a href="logout.php">Logout</a>
+            </button>
         </li>
+        <?php
+          } else {
+          ?>
         <li class="nav-link">
           <button class="button">
-            <a href="login.php">login</a>
+            <a href="login.php">Login</a>
           </button>
         </li>
+        <?php } ?>
       </ul>
     </nav>
   </div>
-
 
 </header>
 <div class="hero-image">
   <div class="hero-cont">
     <div class="hero-text">
       <H1 class="hero-heading">Welkom!</H1>
-      <p class="hero-subtitel" >Advies van Ali</p>
+      <p class="hero-subtitel">Advies van Ali</p>
       <p class="hero-desc">
         Hallo mijn naam is ilyas, ik run een juridisch advies bureau die al jouw problemen kan oplossen. Als jij een juridische problemen hebt ben ik de gene die jou advies kan geven.
       </p>
@@ -59,7 +82,7 @@
       <div class="left-titel">
         <h1>ilyas Abshir Ali</h1>
         <p>1 juni 2002</p>
-        <img src="photos/foto-ily.jpg" alt="zelfportret" class="foto-me" width="500" >
+        <img src="photos/foto-ily.jpg" alt="zelfportret" class="foto-me" width="500">
       </div>
     </div>
   </section>
@@ -71,9 +94,9 @@
 
         </p>
         <h3>Waarom rechten?</h3>
-          <p>
-            De reden dat ik voor de opleiding rechten heb gekozen is omdat ik van jongs af aan al een erg sterk rechtsvaardigheid gevoel heb gehad voor mijzelf en andere. Ik hield ook erg van discussiëren en vond het erg leuk om argumenten te bedenken om een discussie te winnen. Ook heb ik ook veel affiniteit met lezen. Deze kenmerken en gewoontes zorgde ervoor dat ik op de middelbare school ervoor het gekozen om rechtsgeleerdheid te kiezen als vervolgstudie.
-          </p>
+        <p>
+          De reden dat ik voor de opleiding rechten heb gekozen is omdat ik van jongs af aan al een sterk rechtsvaardigheidsgevoel heb gehad voor mijzelf en anderen. Ik hield ook erg van discussiëren en vond het leuk om argumenten te bedenken om de discussie te winnen. Ook heb ik ook veel affiniteit met lezen. Deze kenmerken en gewoontes zorgde ervoor dat ik op de middelbare school ervoor heb gekozen om rechtsgeleerdheid te kiezen als vervolgstudie.
+        </p>
 
 
       </div>
@@ -85,4 +108,5 @@
 </footer>
 
 </body>
+
 </html>
