@@ -97,7 +97,7 @@ if (isset($_POST['deleteReservation'])) {
                 </li>
                 <li class="nav-link">
                     <button class="button">
-                        <a href="contact.html">Contact</a>
+                        <a href="contact2.html">Contact</a>
                     </button>
                 </li>
                 <li class="nav-link">
