@@ -1,68 +1,114 @@
-.navbar{
-    width: 95%;
+
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.container-nav {
+    max-width: 1280px;
     margin: auto;
-    min-height: 70px;
+}
+
+
+.navbar {
+    background-color: black;
+    padding: 15px 0;
+}
+
+.nav-menu {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+    gap: 20px;
 }
 
-.nav-link{
-    font-weight: 300;
+.nav-link button {
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.nav-menu{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-
+.nav-link button:hover {
+    background-color: #777;
 }
 
-.nav-branding{
-    font-size: 1.5rem;
-    font-weight: 700;
+.container {
+    max-width: 1140px;
+    margin: 20px auto;
+}
+
+.title {
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
 #beschikbaarheidskalender {
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
+}
+
+.beschikbaar, .niet-beschikbaar {
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
 }
 
 .beschikbaar {
     background-color: #50a557;
-    color: white;
-    padding: 5px;
-    margin: 5px;
 }
 
 .niet-beschikbaar {
     background-color: red;
-    color: white;
-    padding: 5px;
-    margin: 5px;
 }
 
-.pagination {
+
+.box {
+    margin-bottom: 20px;
+}
+
+.label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.input, .button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.button.is-dark {
+    background-color: #333;
+    color: #fff;
+}
+
+.button.is-dark:hover {
+    background-color: #555;
+}
+
+.pagination-container {
+    display: flex;
+    gap: 10px;
     margin-top: 20px;
 }
 
 .pagination-link {
-    margin-right: 5px;
+    background-color: #555;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
 }
 
 .pagination-link.is-active {
-    background-color: #3273dc;
-    color: #fff;
+    background-color: #333;
 }
-
- .pagination-container {
-     display: flex;
-     flex-wrap: wrap;
- }
-
-.pagination-link {
-    margin-right: 5px;
-}
-

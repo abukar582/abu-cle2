@@ -29,7 +29,8 @@ mysqli_close($db);
 
 <div class="columns is-centered mt-6">
     <div class="box column is-half">
-        <p class="box has-text-weight-bold	">Uw reservering is succesvol doorgestuurd.</p>
+        <p class="box has-text-weight-bold	">Uw reservering is succesvol doorgestuurd.
+        Ali gaat contact met u opnemen.</p>
 <div class="columns is-centered">
     <div class="box column is-half">
 

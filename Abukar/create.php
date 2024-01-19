@@ -61,36 +61,62 @@ if (isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="create.css">
+    <style>
+        header {
+            position: relative;
+            z-index: 1000;
+        }
+    </style>
     <title>Advies van Ali</title>
 </head>
 <body>
-<div class="container-nav">
-    <nav class="navbar">
-        <a href="index.html" class="nav-branding">Advies van Ali</a>
-        <ul class="nav-menu">
-            <li class="nav-link">
-                <button class="button">
-                    <a href="index.html">Home</a>
-                </button>
-            </li>
-            <li class="nav-link">
-                <button class="button">
-                    <a href="create.php">Reserveren</a>
-                </button>
-            </li>
-            <li class="nav-link">
-                <button class="button">
-                    <a href="contact.html">Contact</a>
-                </button>
-            </li>
-            <li class="nav-link">
-                <button class="button">
-                    <a href="login.php">Login</a>
-                </button>
-            </li>
-        </ul>
-    </nav>
-</div>
+<header>
+    <div class="container-nav">
+        <nav class="navbar">
+            <a href="index.html" class="nav-branding">Advies van Ali</a>
+            <ul class="nav-menu">
+                <li class="nav-link">
+                    <button class="button">
+                        <a href="index.html">Home</a>
+                    </button>
+                </li>
+                <li class="nav-link">
+                    <button class="button">
+                        <a href="create.php">Afspreken</a>
+                    </button>
+                </li>
+                <li class="nav-link">
+                    <button class="button">
+                        <a href="contact2.html">Contact</a>
+                    </button>
+                </li>
+
+                <?php
+                if (isset($_SESSION['loggedInUser'])) {
+                    ?>
+                    <li class="nav-link">
+                        <button class="button">
+                            <a href="admin.php">Admin</a>
+                        </button>
+                    </li>
+                    <li class="nav-link">
+                        <button class="button">
+                            <a href="logout.php">Logout</a>
+                        </button>
+                    </li>
+                    <?php
+                } else {
+                    ?>
+                    <li class="nav-link">
+                        <button class="button">
+                            <a href="login.php">Login</a>
+                        </button>
+                    </li>
+                <?php } ?>
+            </ul>
+        </nav>
+    </div>
+</header>
 
 <div class="container px-4">
     <h1 class="title mt-4">Maak een afspraak met mij</h1>

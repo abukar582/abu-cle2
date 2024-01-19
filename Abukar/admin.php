@@ -1,4 +1,6 @@
 <?php
+
+/** @var mysqli $db */
 session_start();
 
 if (!isset($_SESSION['loggedInUser'])) {
@@ -65,6 +67,9 @@ if (isset($_POST['deleteReservation'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+
     <style>
         section {
             margin-top: 100px;
@@ -106,31 +111,43 @@ if (isset($_POST['deleteReservation'])) {
 </header>
 
 <main>
-    <section>
-        <h2>Huidige Reserveringen</h2>
-        <table border="1">
-            <tr>
-                <th>E-mail</th>
-                <th>Telefoonnummer</th>
-                <th>Naam</th>
-                <th>Datum</th>
-            </tr>
-            <?php while ($row = mysqli_fetch_assoc($resultAppointments)) : ?>
-                <tr>
-                    <td><?= $row['email'] ?></td>
-                    <td><?= $row['phone'] ?></td>
-                    <td><?= $row['name'] ?></td>
-                    <td><?= $row['date'] ?></td>
-                    <td>
-                        <form method="post" action="">
-                            <input type="hidden" name="deleteReservation" value="<?= $row['date'] ?>">
-                            <button type="submit">Verwijderen</button>
-                        </form>
-                    </td>
-                </tr>
-            <?php endwhile; ?>
-        </table>
+    <section class="hero is-light is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title is-2 has-text-centered">Huidige Reserveringen</h2>
+                <div class="table-container">
+                    <table class="table is-fullwidth is-striped is-hoverable">
+                        <thead>
+                        <tr>
+                            <th>E-mail</th>
+                            <th>Telefoonnummer</th>
+                            <th>Naam</th>
+                            <th>Datum</th>
+                            <th>Actie</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php while ($row = mysqli_fetch_assoc($resultAppointments)) : ?>
+                            <tr>
+                                <td><?= $row['email'] ?></td>
+                                <td><?= $row['phone'] ?></td>
+                                <td><?= $row['name'] ?></td>
+                                <td><?= $row['date'] ?></td>
+                                <td>
+                                    <form method="post" action="">
+                                        <input type="hidden" name="deleteReservation" value="<?= $row['date'] ?>">
+                                        <button class="button is-danger" type="submit">Verwijderen</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </section>
+
 
     <section>
         <h2>Beschikbaarheidsdatums</h2>
