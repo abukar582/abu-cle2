@@ -32,3 +32,16 @@ body {
 
 #nav2 a {
 }
+
+.contact-section {
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
