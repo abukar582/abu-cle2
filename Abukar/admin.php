@@ -8,6 +8,10 @@ if (!isset($_SESSION['loggedInUser'])) {
     exit();
 }
 
+if (isset($_POST['updateAvailability'])) {
+    $selectedDate = $_POST['updateAvailability'];
+}
+
 require_once "database.php";
 
 $queryAppointments = "SELECT * FROM appointments";
@@ -148,17 +152,27 @@ if (isset($_POST['deleteReservation'])) {
     </section>
 
 
-    <section>
-        <h2>Beschikbaarheidsdatums</h2>
-        <form method="post">
-            <select name="updateDates[]" multiple size="15">
-                <?php while ($dateRow = mysqli_fetch_assoc($resultDates)) : ?>
-                    <option value="<?= $dateRow['date'] ?>"><?= $dateRow['date'] ?></option>
-                <?php endwhile; ?>
-            </select>
-            <button type="submit" name="updateAvailability">Update Beschikbaarheid</button>
+    <section class="availability-section">
+        <h2 class="section-title">Beschikbaarheidsdatums</h2>
+        <form method="post" class="availability-form">
+            <div class="select-wrapper">
+                <label for="updateDates" class="select-label">Selecteer datums:</label>
+                <select name="updateDates[]" id="updateDates" multiple size="10" class="date-select">
+                    <?php while ($dateRow = mysqli_fetch_assoc($resultDates)) : ?>
+                        <?php
+                        $availabilityClass = $dateRow['availability'] ? 'beschikbaar' : 'niet-beschikbaar';
+                        ?>
+                        <option value="<?= $dateRow['date'] ?>" class="<?= $availabilityClass ?>">
+                            <?= $dateRow['date'] ?>
+                        </option>
+                    <?php endwhile; ?>
+                </select>
+            </div>
+            <button type="submit" name="updateAvailability" class="update-button">Update Beschikbaarheid</button>
         </form>
     </section>
+
+
 </main>
 
 <footer>

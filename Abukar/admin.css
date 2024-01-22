@@ -2,7 +2,7 @@
 
 
 .container-nav{
-    width: 100%;
+    width: 103%;
     margin: auto;
     position: fixed;
     top: 0;
@@ -46,3 +46,57 @@
 button a{
     color: white;
 }
+
+.availability-section {
+    margin-top: 20px;
+    margin-left: 38vw;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.availability-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.select-wrapper {
+    margin-bottom: 15px;
+}
+
+.select-label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.date-select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.update-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.update-button:hover {
+    background-color: #45a049;
+}
+
+.beschikbaar {
+    color: #50a557;
+}
+
+.niet-beschikbaar {
+    color: red;
+}
+

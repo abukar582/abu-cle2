@@ -1,6 +1,6 @@
 <?php
 /** @var mysqli $db */
-
+session_start();
 require_once "database.php";
 
 $sql = "SELECT date, availability FROM dates";
@@ -61,12 +61,6 @@ if (isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="create.css">
-    <style>
-        header {
-            position: relative;
-            z-index: 1000;
-        }
-    </style>
     <title>Advies van Ali</title>
 </head>
 <body>
@@ -82,7 +76,7 @@ if (isset($_POST['submit'])) {
                 </li>
                 <li class="nav-link">
                     <button class="button">
-                        <a href="create.php">Afspreken</a>
+                        <a href="create.php">Reserveren</a>
                     </button>
                 </li>
                 <li class="nav-link">
@@ -207,7 +201,7 @@ if (isset($_POST['submit'])) {
         </form>
     </section>
 
-    <a class="button mt-4" href="index.php">&laquo; Go back to the list</a>
+    <a class="button mt-4" href="index.php">&laquo; Terug naar home</a>
 </div>
 
 </body>
