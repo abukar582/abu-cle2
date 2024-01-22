@@ -1,5 +1,6 @@
 body {
-    background: lightslategrey;
+    background-image: url("photos/justitia.jpg");
+    background-size: 100%;
     font-family: Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
@@ -10,6 +11,7 @@ body {
     background-color: black;
     display: flex;
     align-items: baseline;
+    margin-bottom: 50px;
 }
 
 
@@ -33,15 +35,71 @@ body {
 #nav2 a {
 }
 
+header {
+    margin-left: 350px;
+    color: white;
+    text-shadow:0px 0px 10px black;
+}
+
 .contact-section {
-    background-color: bisque;
+    padding: 15px;
+    margin-left: 350px;
+    width: 800px;
+    box-shadow: 0px 0px 10px black;
+    background-color: rgba(255, 255, 255, .8);
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
 }
+
+
+.contact-section p {
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 500px;
+}
+
+.contact-section input {
+    width: 300px;
+    height: 40px;
+    justify-content: flex-start;
+}
+
+
+
 
 .contact-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+}
+
+
+form{
+    text-align: right;
+}
+
+.contact-input {
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.contact-input label {
+    margin-right: 75px;
+}
+
+#submitting {
+    display: flex;
+    justify-content: center;
+}
+
+#submitting input {
+    font-weight: 600;
+    background-color: #363108;
+    color: #4F462E;
+    margin: 20px;
 }
