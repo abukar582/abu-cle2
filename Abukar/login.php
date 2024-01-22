@@ -66,7 +66,7 @@ if (isset($_POST['submit'])) {
 
         <?php if ($login) { ?>
             <p>Je bent ingelogd!</p> <?php
-            header("Location: index.html");
+            header("Location: index.php");
             exit();
             } else { ?>
 
@@ -119,7 +119,7 @@ if (isset($_POST['submit'])) {
                         <div class="field-label is-normal"></div>
                         <div class="field-body">
                             <button class="button is-link is-fullwidth" type="submit" name="submit" value="submit">Log in</button>
-                            <a class="button is-black" href="index.html">Homepagina</a>
+                            <a class="button is-black" href="index.php">Homepagina</a>
 
 
                         </div>

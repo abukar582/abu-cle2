@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
         mysqli_close($db);
 
         // Redirect to index.php
-        header('Location: index.html');
+        header('Location: index.php');
         exit;
     }
 }
@@ -147,6 +147,6 @@ if (isset($_POST['submit'])) {
 </div>
 
 
-<a class="button mt-4" href="index.html">&laquo; terug naar home</a>
+<a class="button mt-4" href="index.php">&laquo; terug naar home</a>
 </body>
 </html>

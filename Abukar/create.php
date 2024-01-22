@@ -73,11 +73,11 @@ if (isset($_POST['submit'])) {
 <header>
     <div class="container-nav">
         <nav class="navbar">
-            <a href="index.html" class="nav-branding">Advies van Ali</a>
+            <a href="index.php" class="nav-branding">Advies van Ali</a>
             <ul class="nav-menu">
                 <li class="nav-link">
                     <button class="button">
-                        <a href="index.html">Home</a>
+                        <a href="index.php">Home</a>
                     </button>
                 </li>
                 <li class="nav-link">

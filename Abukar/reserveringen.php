@@ -38,7 +38,7 @@ mysqli_close($db);
             <ul class="nav-menu">
                 <li class="nav-link">
                     <button class="button">
-                        <a href="index.html">Home</a>
+                        <a href="index.php">Home</a>
                     </button>
                 </li>
                 <li class="nav-link">

@@ -34,7 +34,7 @@ mysqli_close($db);
 <div class="columns is-centered">
     <div class="box column is-half">
 
-    <a href="index.html">Ga terug </a>
+    <a href="index.php">Ga terug </a>
 
 
     </div>

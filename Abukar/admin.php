@@ -66,13 +66,12 @@ if (isset($_POST['deleteReservation'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
+    <link rel="stylesheet" href="admin.css">
 
     <style>
         section {
-            margin-top: 100px;
+            margin-top: 45px;
         }
     </style>
     <title>Admin Page</title>
@@ -83,11 +82,11 @@ if (isset($_POST['deleteReservation'])) {
 <header>
     <div class="container-nav">
         <nav class="navbar">
-            <a href="index.html" class="nav-branding">Advies van Ali</a>
+            <a href="index.php" class="nav-branding">Advies van Ali</a>
             <ul class="nav-menu">
                 <li class="nav-link">
                     <button class="button">
-                        <a href="index.html">Home</a>
+                        <a href="index.php">Home</a>
                     </button>
                 </li>
                 <li class="nav-link">

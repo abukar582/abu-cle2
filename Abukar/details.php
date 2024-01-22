@@ -6,7 +6,7 @@ require_once "database.php";
 // redirect when uri does not contain an id
 if (!isset($_GET['id']) || $_GET['id'] == '') {
     // redirect to index.php
-    header('Location: index.html');
+    header('Location: index.php');
     exit;
 }
 
@@ -18,7 +18,7 @@ $result = mysqli_query($db, $query);
 
 //If the album doesn't exist, redirect back to the homepage
 if (mysqli_num_rows($result) == 0) {
-    header('Location: index.html');
+    header('Location: index.php');
     exit;
 }
 
@@ -52,7 +52,7 @@ mysqli_close($db);
         </ul>
     </section>
     <div>
-        <a class="button" href="index.html">Go back to the list</a>
+        <a class="button" href="index.php">Go back to the list</a>
     </div>
 </div>
 </body>
