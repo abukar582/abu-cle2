@@ -4,7 +4,7 @@ session_start();
 require_once "database.php";
 
 $sql = "SELECT date, availability FROM dates";
-$result = $db->query($sql);
+$result = mysqli_query($db, $sql); //dit is de boosdoener
 
 if ($result->num_rows > 0) {
     $dates = array();
