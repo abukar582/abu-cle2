@@ -70,8 +70,8 @@
       <H1 class="hero-heading">Welkom!</H1>
       <p class="hero-subtitel">Advies van Ali</p>
       <p class="hero-desc">
-        Hallo, mijn naam is Ilyas, ik run een juridisch advies bureau die al jouw problemen kan oplossen.
-        Als jij een juridische problemen hebt ben ik de gene die jou advies kan geven.
+        Hallo, mijn naam is Ilyas, ik run een juridisch advies bureau dat al jouw problemen kan oplossen.
+        Als jij een juridisch problemen hebt ben ik degene die jou advies kan geven.
       </p>
     </div>
   </div>
@@ -91,7 +91,7 @@
     <div class="my-desc">
       <div class="desc-titel">
         <h1> About Me</h1>
-        <p>Mijn naam is Ilyas Abshir Ali. Ik ben 20 jaar en woon in Zoetermeer. Op dit moment zit ik in mijn derde jaar van de studie rechten op de Erasmus universiteit.
+        <p>Mijn naam is Ilyas Abshir Ali. Ik ben 20 jaar oud en woon in Zoetermeer. Ik zit nu in mijn derde jaar van de studie rechten op de Erasmus universiteit.
 
         </p>
         <h3>Waarom rechten?</h3>
