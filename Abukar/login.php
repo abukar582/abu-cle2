@@ -63,6 +63,7 @@ if (isset($_POST['submit'])) {
 <section class="section">
     <div class="container content">
         <h2 class="title">Log in</h2>
+        <h3>(ali@gmail.com en wachtwoord ali)</h3>
 
         <?php if ($login) { ?>
             <p>Je bent ingelogd!</p> <?php
